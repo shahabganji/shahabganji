@@ -1,41 +1,6 @@
-title: hexo-theme-doc-seed
+title: About
 ---
 
-# hexo-theme-doc-seed
+I am Saeed Ganji, you can call me Shahab. A husband and father of two lovely, cute and smart children, Bahar and AliAbbas. I have a great passion for traveling, reading books, doing sports, and of course coding. Also a Bianconeri 🙂
 
-This project is a skeleton for a documentation website using [Hexo](https://hexo.io) and [hexo-theme-doc](https://github.com/zalando-incubator/hexo-theme-doc).   
-You can use it to quickly bootstrap your documentation website.
-
-The seed contains the required structure and files to use Hexo and the theme, plus dummy content to show the usage of the main features of the theme.
-
-## Getting Started
-
-To get started have a look first to the [requirements](https://zalando-incubator.github.io/hexo-theme-doc/get-started.html#Requirements), then install `hexo-cli` with:
-
-```bash
-$ npm install -g hexo-cli
-```
-
-Now just clone `hexo-theme-doc-seed` repository:
-
-```bash
-$ git clone https://github.com/zalando-incubator/hexo-theme-doc-seed.git <directory>
-```
-
-Go into the resulting directory and install dependencies:
-
-```bash
-$ npm install
-```
-
-Start the preview server locally with:
-
-```
-hexo s
-```
-
-> If you open your browser at http://localhost:4000 you should see the documentation website up and running.
-
-## More Informations
-
-For more informations please visit the [user documentation website](https://zalando-incubator.github.io/hexo-theme-doc/).
+I am a .NET developer and SQL Server DBA and have been working in the industry since .NET 1.1. Developing distributed applications and web is my passion. I have my hands dirty on ASP.NET Core, SQL Server, Aurelia, Redis, and RabbitMQ.

@@ -1,32 +1,33 @@
 {
   "logo": {
-    "text": "Hexo Doc Theme Seed",
+    "text": "Saeed Ganji",
     "type": "link",
     "path": "index.html"
   },
   "main": [
     {
-      "text": "SWAGGER",
+      "text": "Aurelia",
       "type": "label"
     },
     {
-      "text": "UI",
+      "text": "Chat Application",
       "type": "link",
-      "path": "swagger/ui.html"
+      "path": "aurelia/chat-application-using-aurelia-and-signalr.html"
     },
     {
-      "text": "To HTML",
+      "text": "Secure App With Identity Server",
       "type": "link",
-      "path": "swagger/to-html.html"
+      "path": "aurelia/secure-your-aurelia-app-with-identityserver.html"
     },
     {
-      "text": "SUPPORT AND FEEDBACK",
-      "type": "label"
+      "text": "Leverage Services Part 1",
+      "type": "link",
+      "path": "aurelia/aurelia-component-communication-leverage-services-part-1.html"
     },
     {
-      "text": "Raise an Issue on Github",
+      "text": "Leverage Services Part 2",
       "type": "link",
-      "path": "https://github.bus.zalan.do/stargate/hexo-stargate-doc-theme-seed/issues/new"
+      "path": "aurelia/aurelia-component-communication-leverage-services-part-2.html"
     }
   ]
 }
