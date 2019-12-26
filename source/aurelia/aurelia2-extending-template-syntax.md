@@ -63,7 +63,7 @@ Given the above example and the implementation the parameters would have values 
 
 then we use these values to tell Aurelia to bound the `ref` with the element and by `uploadInput` identifier. If we want to extend the syntax for `ref.view-model="uploadVM"`, for example, we could just add another patter to the existing class: 
 
-```
+```js
 @attributePattern(
     { pattern: 'PART#PART', symbols: '#' }, // e.g. view-model#uploadVM
     { pattern: '#PART', symbols: '#' }      // e.g. #uploadInput
