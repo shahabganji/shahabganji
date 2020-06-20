@@ -1,6 +1,15 @@
-# Chat Application using Aurelia and SignalR
+title: Chat Application using Aurelia and SignalR
+date: October 8, 2018
+category: aurelia
+tags:
+    - aurelia
+    - asp.net core
+    - signalr
+---
 
-_Published by [shahabganji](https://shahabganji.me) on October 8, 2018_
+<!-- # Chat Application using Aurelia and SignalR
+
+_Published by [shahabganji](https://shahabganji.me) on October 8, 2018_ -->
 
 Hello and welcome! You have definitely heard of SignalR for real-time web applications, in this post I want to help you write a simple traditional chat application using SignalR and my favorite SPA framework [Aurelia](https://aurelia.io). You can download the source code from my GitHub, [here](https://github.com/shahabisblogging/ChatApplicationAureliaSignalR), notice that in this sample we use WebPack for bundling.
 

@@ -1,3 +1,11 @@
+title: Aurelia 2, Extending Template Syntax
+date: December 03 2019
+category: aurelia
+tags:
+    - aurelia
+    - aurelia2
+---
+
 Hello and welcome back, last month Rob Eisenberg [announced](https://aurelia.io/blog/2019/10/31/aurelia-vnext-2019-fall-update/) about Aurelia 2; one of the amazing parts to me was the [extensibility](https://aurelia.io/blog/2019/10/31/aurelia-vnext-2019-fall-update/#extensibility). Let's dig deeper than just a notice :wink: ;)
 
 * # [attributePattern](https://github.com/aurelia/aurelia/blob/master/packages/jit/src/attribute-pattern.ts#L443)

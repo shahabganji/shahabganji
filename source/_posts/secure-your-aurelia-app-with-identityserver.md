@@ -1,6 +1,17 @@
-# Secure your Aurelia app with IdentityServer
+title: Secure your Aurelia app with IdentityServer
+date: October 22 2018
+category: aurelia
+tags:
+    - aurelia
+    - asp.net core
+    - identityserver
+    - openid connect
+    - oauth2
+---
 
-_Published by [shahabganji](https://shahabganji.me) on October 22, 2018_
+<!-- # Secure your Aurelia app with IdentityServer
+
+_Published by [shahabganji](https://shahabganji.me) on October 22, 2018_ -->
 
 Hello and welcome! Today I want to describe how we can secure our [Aurelia](https://aurelia.io) applications with the help of an Authorization Server, in this case, [IdentityServer4](https://identityserver.io/). I hope you enjoy 🙂 the topic and find it fruitful for your applications. The topic is twofold, how to run IdentityServer4, and how to configure Aurelia to be able to communicate with our ISP( Identity Service Provider ). We are using one of the awesome plugins of Aurelia to do so; [aurelia-open-id-connect](https://github.com/aurelia-contrib/aurelia-open-id-connect), many thanks to Mr. [Shaun Luttin](https://github.com/shaunluttin) for all his efforts. You can download the source code of this post from my [Github](https://github.com/shahabisblogging/AureliaIdentityServer) repository.
 

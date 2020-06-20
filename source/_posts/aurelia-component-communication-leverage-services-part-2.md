@@ -1,6 +1,14 @@
-# Aurelia Component Communication, Leverage Services, Part 2
+title: Aurelia Component Communication, Leverage Services, Part 2
+date: March 24 2019
+category: aurelia
+tags:
+    - aurelia
+    - services
+---
 
-_Published by [shahabganji](https://shahabganji.me) on March 24, 2019_
+<!-- # Aurelia Component Communication, Leverage Services, Part 2
+
+_Published by [shahabganji](https://shahabganji.me) on March 24, 2019_ -->
 
 
 

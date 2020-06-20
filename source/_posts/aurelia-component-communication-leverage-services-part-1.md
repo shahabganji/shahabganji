@@ -1,13 +1,14 @@
-date: 1985-03-23T10:20:00Z
+title: Aurelia Component Communication, Leverage Services, Part 1
+date: January 24 2019
 category: aurelia
 tags:
     - aurelia
     - services
 ---
 
-# Aurelia Component Communication, Leverage Services, Part 1
+<!-- # Aurelia Component Communication, Leverage Services, Part 1 -->
 
-_Published by [shahabganji](https://shahabganji.me) on January 24, 2019_
+<!-- _Published by [shahabganji](https://shahabganji.me) on January 24, 2019_ -->
 
 
 Hello and welcome! In this post I want to discover how you can take advantage of services to make components of your application talk to each other. This is inspired by what Mrs. Deborah Kurata explained [here](https://www.pluralsight.com/courses/angular-component-communication) and I have tried to adapt it to the world of Aurelia. I have created a [Github repository](https://github.com/shahabisblogging/AureliaComponentCommunicationViaServices/tree/start) so that you can use it to follow up with this post. I am a great fan of typescript which is used in the sample, besides I also used [aurelia-toolbelt](https://github.com/aurelia-toolbelt/aurelia-toolbelt) as the UI library with the `aurelia-cli` configured with built-in bundler and no tests. Shall we start? Let’s do it!
