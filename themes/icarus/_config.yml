@@ -182,7 +182,7 @@ widgets:
         # Author name
         author: Shahab
         # Author title
-        author_title: Lead Software Developer
+        author_title: Software Developer
         # Author's current location
         location: Tehran, Iran
         # URL or path to the avatar image
@@ -222,8 +222,7 @@ widgets:
         type: links
         # Names and URLs of the sites
         links:
-            Hexo: 'https://hexo.io'
-            Bulma: 'https://bulma.io'
+            Aurelia: 'https://aurelia.io'
     # Categories widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
