@@ -1,13 +1,13 @@
 title: Explore Global Query Filters in EF Core
 date: June 21, 2020
-category: data access
+category: efcore
 tags: 
   - EF Core
   - database
   - data access
 ---
 
-# THIS IS A DRAFT
+# THIS IS DRAFT
 
 
 In this article we are going to check one of the features of Entity Framework Core, Global Query Filters; this was introfuced first in EF Core 2.0 and is just a query predicate that will be appended to the where clause of the entitities that this feature is activated for them. Some common scenarios for such feature would be `Soft delete` and `Multi tenancy`.
