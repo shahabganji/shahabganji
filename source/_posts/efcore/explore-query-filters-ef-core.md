@@ -17,7 +17,7 @@ Lets see that in action.
 
 <!-- more -->
 
-Consider that you are writing and application in which entities can be soft deleted, why not completely delete those entities? [jus don't do that](http://udidahan.com/2009/09/01/dont-delete-just-dont/), said Udi Dahan. Okay, let's create an `Author` entity:
+Consider that you are writing an application in which entities can be soft deleted, why not completely delete those entities? [jus don't do that](http://udidahan.com/2009/09/01/dont-delete-just-dont/), said Udi Dahan. Okay, let's create an `Author` entity:
 
 ```cs
 public class Author
