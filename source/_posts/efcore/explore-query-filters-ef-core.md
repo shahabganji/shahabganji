@@ -1,23 +1,15 @@
 title: Explore Global Query Filters in EF Core
 date: June 21, 2020
 category: efcore
-tags: 
+tags:
   - EF Core
   - database
   - data access
 ---
 
-# THIS IS DRAFT
+In this article we are going to check one of the features of Entity Framework Core, [Global Query Filters](https://docs.microsoft.com/en-us/ef/core/querying/filters); this was introduced first in EF Core 2.0 and is just a query predicate that will be appended to the end of where clause for queries on entities for which this feature has been activated. Some common scenarios would be `Soft delete` and `Multi tenancy`.
 
-
-In this article we are going to check one of the features of Entity Framework Core, Global Query Filters; this was introfuced first in EF Core 2.0 and is just a query predicate that will be appended to the where clause of the entitities that this feature is activated for them. Some common scenarios for such feature would be `Soft delete` and `Multi tenancy`.
-
-
-Lets see that in action.
-
-<!-- more -->
-
-Consider that you are writing an application in which entities can be soft deleted, why not completely delete those entities? [jus don't do that](http://udidahan.com/2009/09/01/dont-delete-just-dont/), said Udi Dahan. Okay, let's create an `Author` entity:
+Consider that you are writing an application in which entities can be soft deleted, why not completely delete those entities? <!-- more --> [just don't do that](http://udidahan.com/2009/09/01/dont-delete-just-dont/), said Udi Dahan. Okay, let's create an `Author` entity:
 
 ```cs
 public class Author
@@ -32,18 +24,18 @@ public class Author
 }
 ```
 
-If we want to add a query filter to the `Author` entity, that should be done either in `OnModelCreating` method of the `DbContext`, or in the `EntityTypeConfiguration<T>` class relate to this entity. For now, we could create a `DbContext` and override its `OnModelCreating` method, then configure the `Author` entity by telling the context to automatically filter out those who are sof delete, their `IsDeleted` property is `false`.
+If we want to add a query filter to the `Author` entity, that should be done either in `OnModelCreating` method of the `DbContext`, or in the `EntityTypeConfiguration<T>` class related to entity `T`. For now, we could create a `DbContext` and override its `OnModelCreating` method, then configure the `Author` entity by telling the context to automatically _**filter out** soft-deleted_ records, their `IsDeleted` property is `true`.
 
 ```cs
 public class BookstoreDbContext : DbContext
 {
-    // omitted code 
+    // omitted code
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Author>()
                     .HasQueryFilter(author => !author.IsDeleted);
-        
+
         base.OnModelCreating(modelBuilder);
     }
 
@@ -51,25 +43,25 @@ public class BookstoreDbContext : DbContext
 }
 ```
 
-To achieve that, `HasQueryFilter` method is being used, it is defined on `EntityTypeBuilder` and takes  an `Expression` of `Func<Author, bool>` which means it will take an author instance and returns a boolean based on the conditions defined, in this case, the author not being (soft) deleted. Now, whenever you query the `Author` entity this query will also get appended to whatever you have provided for your where clause by the dbcontext.
+To achieve that, `HasQueryFilter` method is being used, it is defined on `EntityTypeBuilder` and takes  an `Expression` of `Func<Author, bool>` which means it will take an author instance and returns a boolean based on the conditions defined, in this case, the author not being (soft) deleted. Now, whenever you query the `Author` entity this query will also get appended to whatever you have provided for your where clause by the DbContext.
 
 ```cs
 // omitted code
 var authors = context.Authors
-                        .Where(author => author.LastName.StartsWith("joh"));
+                .Where(author => author.LastName.StartsWith("joh"));
 ```
- resulting in a database query like:
+ resulting in a database query:
 
  ```sql
 SELECT  a.*
 FROM    dbo.Authors as a
-WHERE   a.LastName  LIKE 'joh%' 
+WHERE   a.LastName  LIKE 'joh%'
     AND a.IsDelete  =     0
  ```
 
-So far so good. This could be a common scenario for almost all of your entities(aggregae roots, if inetersted) and we are reluctant to repeat same code for every individual entity([DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)).
+So far so good. This could be a common scenario for almost all of your entities(aggregate roots, if interested) and we are reluctant to repeat same code for every individual entity([DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)).
 
-Let's first extract an interface, `ICanBeSoftDeleted`, which desired entities will be implemented:
+Let's first extract an interface, `ICanBeSoftDeleted`, which desired entities will implement that.
 
 ```cs
 public interface ICanBeSoftDeleted
@@ -89,15 +81,15 @@ public class Book : ICanBeSoftDeleted
 
 ```
 
-Now we have to configure the common query filter for each entity, in the previous version we used a **generic** overload of `modelBuilder.Entity<T>` method, now it is not possible tho, so we have to generate a _Lambda Expression_ for each entity to be able to use the non-generic overload:
+Now we have to configure the common query filter for each entity, in the previous version we used a **generic** overload of `modelBuilder.Entity<T>` method, now it is not possible though, so we have to generate a _Lambda Expression_ for each entity to be able to use the non-generic overload:
 
 ```cs
 protected override void OnModelCreating(ModelBuilder modelBuilder)
 {
     var softDeleteEntities = typeof(ICanBeSoftDeleted).Assembly.GetTypes()
                 .Where(type => typeof(ICanBeSoftDeleted)
-                                .IsAssignableFrom(type) 
-                                && type.IsClass 
+                                .IsAssignableFrom(type)
+                                && type.IsClass
                                 && !type.IsAbstract);
 
     foreach (var softDeleteEntity in softDeleteEntities)
@@ -122,10 +114,10 @@ let's discover the `GenerateQueryFilterLambda`, it takes the type of the entity 
     // or: e => !e.IsDeleted
 
     // e =>
-    var parameter = Expression.Parameter(type, "e"); 
+    var parameter = Expression.Parameter(type, "e");
 
     // false
-    var falseConstant = Expression.Constant(false); 
+    var falseConstant = Expression.Constant(false);
 
     // e.IsDeleted
     var propertyAccess = Expression.PropertyOrField(parameter, nameof(ICanBeSoftDeleted.IsDeleted));
@@ -134,14 +126,20 @@ let's discover the `GenerateQueryFilterLambda`, it takes the type of the entity 
     var equalExpression = Expression.Equal(propertyAccess, falseConstant);
 
     // e => e.IsDeleted == false
-    var lambda = Expression.Lambda(equalExpression, parameter); 
+    var lambda = Expression.Lambda(equalExpression, parameter);
 
     return lambda;
 }
 ```
 
-Comments on top of each line indicating that what part of the (lambda) expression is going to be genrated. This way we can simply implement the interface and our DbContext automatically detect and add the common global filter to our queries for the specified entities.
+Comments on top of each line indicating that what part of the (lambda) expression is going to be generated. This way we can simply implement the interface and our DbContext automatically detect and add the common global filter to our queries for the specified entities. At the end whenever you want to disable query filter use `IgnoreQueryFilters()` on your LINQ query.
+
+```cs
+var authors = context.Authors
+                .Where(author => author.LastName.StartsWith("joh"))
+                .IgnoreQueryFilters();
+```
 
 # Conclusion
 
-Most of the times there are business query patterns that will apply globally on some entities in you application, bu employing `Query Filters` of EF Core you could simply and easily implement such requirement. At the end, [here](https://github.com/shahabisblogging/SampleEfCoreBookStore) you could find a sammple for this article. Have a great day and enjoy coding.
+Most of the times there are business query patterns that will apply globally on some entities in you application, bu employing `Query Filters` of EF Core you could simply and easily implement such requirement. There is also a limitation, these filters can only be applied to the root entity of an inheritance hierarchy. Finally, [here](https://github.com/shahabisblogging/SampleEfCoreBookStore) you could find a sample for this article. Have a great day and enjoy coding.

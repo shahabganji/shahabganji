@@ -103,7 +103,7 @@ article:
     highlight:
         # Code highlight themes
         # https://github.com/highlightjs/highlight.js/tree/master/src/styles
-        theme: dracula
+        theme: atom-one-dark
             # atom-one-light
         # Show copy code button
         clipboard: true
