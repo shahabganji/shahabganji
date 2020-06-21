@@ -68,3 +68,80 @@ WHERE   a.LastName  LIKE 'joh%'
  ```
 
 So far so good. This could be a common scenario for almost all of your entities(aggregae roots, if inetersted) and we are reluctant to repeat same code for every individual entity([DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)).
+
+Let's first extract an interface, `ICanBeSoftDeleted`, which desired entities will be implemented:
+
+```cs
+public interface ICanBeSoftDeleted
+{
+    bool IsDeleted{ get; set;}
+}
+
+public class Author : ICanBeSoftDeleted
+{
+    // omitted code
+}
+
+public class Book : ICanBeSoftDeleted
+{
+    // omitted code
+}
+
+```
+
+Now we have to configure the common query filter for each entity, in the previous version we used a **generic** overload of `modelBuilder.Entity<T>` method, now it is not possible tho, so we have to generate a _Lambda Expression_ for each entity to be able to use the non-generic overload:
+
+```cs
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    var softDeleteEntities = typeof(ICanBeSoftDeleted).Assembly.GetTypes()
+                .Where(type => typeof(ICanBeSoftDeleted)
+                                .IsAssignableFrom(type) 
+                                && type.IsClass 
+                                && !type.IsAbstract);
+
+    foreach (var softDeleteEntity in softDeleteEntities)
+    {
+        modelBuilder.Entity(softDeleteEntity)
+                    .HasQueryFilter(
+                        GenerateQueryFilterLambda(softDeleteEntity)
+                        );
+    }
+
+    base.OnModelCreating(modelBuilder);
+}
+
+```
+
+let's discover the `GenerateQueryFilterLambda`, it takes the type of the entity and will return a LambdaExpression of Func<Type, bool>, we should generate `e => e.IsDeleted == false`, right? see how to generate each part using [Expressions](https://docs.microsoft.com/en-us/dotnet/api/system.linq.expressions.expression?view=netcore-3.1) in .Net Core.
+
+```cs
+ private LambdaExpression GenerateQueryFilterLambda(Type type)
+{
+    // we should generate:  e => e.IsDeleted == false
+    // or: e => !e.IsDeleted
+
+    // e =>
+    var parameter = Expression.Parameter(type, "e"); 
+
+    // false
+    var falseConstant = Expression.Constant(false); 
+
+    // e.IsDeleted
+    var propertyAccess = Expression.PropertyOrField(parameter, nameof(ICanBeSoftDeleted.IsDeleted));
+
+    // e.IsDeleted == false
+    var equalExpression = Expression.Equal(propertyAccess, falseConstant);
+
+    // e => e.IsDeleted == false
+    var lambda = Expression.Lambda(equalExpression, parameter); 
+
+    return lambda;
+}
+```
+
+Comments on top of each line indicating that what part of the (lambda) expression is going to be genrated. This way we can simply implement the interface and our DbContext automatically detect and add the common global filter to our queries for the specified entities.
+
+# Conclusion
+
+Most of the times there are business query patterns that will apply globally on some entities in you application, bu employing `Query Filters` of EF Core you could simply and easily implement such requirement. At the end, [here](https://github.com/shahabisblogging/SampleEfCoreBookStore) you could find a sammple for this article. Have a great day and enjoy coding.
