@@ -142,4 +142,4 @@ var authors = context.Authors
 
 # Conclusion
 
-Most of the times there are business query patterns that will apply globally on some entities in you application, bu employing `Query Filters` of EF Core you could simply and easily implement such requirement. There is also a limitation, these filters can only be applied to the root entity of an inheritance hierarchy. Finally, [here](https://github.com/shahabisblogging/SampleEfCoreBookStore) you could find a sample for this article. Have a great day and enjoy coding.
+Most of the times there are business query patterns that will apply globally on some entities in you application, by employing `Query Filters` of EF Core you could simply and easily implement such requirement. There is also a limitation, these filters can only be applied to the root entity of an inheritance hierarchy. Finally, [here](https://github.com/shahabisblogging/SampleEfCoreBookStore) you could find a sample for this article. Have a great day and enjoy coding.
