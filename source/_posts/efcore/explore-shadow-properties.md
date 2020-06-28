@@ -1,13 +1,11 @@
 title: Explore Shadow Properties in EF Core
-date: June 23, 2020
+date: June 28, 2020
 category: efcore
 tags:
   - EF Core
   - database
   - data access
 ---
-
-# This is _**DRAFT**_
 
 In the [previous post](https://shahabganji.me/efcore/explore-query-filters-ef-core/) we discovered Query Filters, a feature for EF Core 2.0 and later. Now I want to take a look at another popular feature [Shadow Properties](https://docs.microsoft.com/en-us/ef/core/modeling/shadow-properties). When designing applications we tend to keep our code clean and simple, however there are times that you need to add properties other than what is required in your main business use cases, `CreatedOn` and `LastUpdatedOn` are such well-known properties. Our code will look like the next:
 
@@ -124,4 +122,4 @@ public override Task<int> SaveChangesAsync(
 
 Shadow properties are giving us an opportunity to clean up our domain models from codes that are not necessarily based on the business rules, as other features and technologies they have their own pros and cons we might consider when using them.
 
-Now that we know how to handle shadow properties and also able to add global query filters it would be a good practice to change the soft delete mechanism as a shadow property as well. Have a great day and enjoy coding!
+You could find the complete code of this post on [github](). Now that we know how to handle shadow properties and also able to add global query filters it would be a good practice to change the soft delete mechanism as a shadow property as well. Have a great day and enjoy coding!
