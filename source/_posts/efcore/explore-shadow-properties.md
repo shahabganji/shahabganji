@@ -122,4 +122,4 @@ public override Task<int> SaveChangesAsync(
 
 Shadow properties are giving us an opportunity to clean up our domain models from codes that are not necessarily based on the business rules, as other features and technologies they have their own pros and cons we might consider when using them.
 
-You could find the complete code of this post on [github](). Now that we know how to handle shadow properties and also able to add global query filters it would be a good practice to change the soft delete mechanism as a shadow property as well. Have a great day and enjoy coding!
+You could find the complete code of this post on [github](https://github.com/shahabisblogging/SampleEfCoreBookStore/tree/shadow-properties). Now that we know how to handle shadow properties and also able to add global query filters it would be a good practice to change the soft delete mechanism as a shadow property as well. Have a great day and enjoy coding!
