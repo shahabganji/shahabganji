@@ -291,7 +291,7 @@ plugins:
     # https://analytics.google.com
     google_analytics:
         # Google Analytics tracking ID
-        tracking_id: 
+        tracking_id: G-PZJQ3DTMQ0
     # Hotjar user feedback plugin
     # https://www.hotjar.com/
     hotjar:
