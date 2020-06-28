@@ -7,7 +7,7 @@ tags:
   - data access
 ---
 
-In the [previous post](https://shahabganji.me/efcore/explore-query-filters-ef-core/) we discovered Query Filters, a feature for EF Core 2.0 and later. Now I want to take a look at another popular feature [Shadow Properties](https://docs.microsoft.com/en-us/ef/core/modeling/shadow-properties). When designing applications we tend to keep our code clean and simple, however there are times that you need to add properties other than what is required in your main business use cases, `CreatedOn` and `LastUpdatedOn` are such well-known properties. Our code will look like the next:
+In the [previous post](https://shahabganji.me/efcore/explore-query-filters-ef-core/) we discovered Query Filters, a feature for EF Core 2.0 and later. Now I want to take a look at another popular feature [Shadow Properties](https://docs.microsoft.com/en-us/ef/core/modeling/shadow-properties). When designing applications we tend to keep our code clean and simple, however there are times that you need to add properties other than what is required in your main business use cases, `CreatedOn` and `LastUpdatedOn` are such well-known properties.  <!-- more --> Our code will look like the next:
 
 ```cs
 public class Author
