@@ -225,6 +225,7 @@ widgets:
             Aurelia: 'https://aurelia.io'
             EF Core: 'https://docs.microsoft.com/en-us/ef/core/'
             ASP.NET Core: 'https://docs.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1'
+            SQL Server: https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15
     # Categories widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
