@@ -4,6 +4,9 @@ category: aurelia
 tags:
     - aurelia
     - asp.net core
+    - identity
+    - authorization
+    - authentication
     - identityserver
     - openid connect
     - oauth2
