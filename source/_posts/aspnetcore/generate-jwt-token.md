@@ -134,4 +134,4 @@ Now, you by adding an `Authorization` header, with the value of `Bearer ` plus y
 
 ## Conclusion
 
-ASP.NET Core has so many built-in libraries and mechanisms to support developers for a better implementation of the functional and non-functional requirements; classes you've seen so far in this article are one of the many, just to support Json Web Tokens. I hope you find this article fruitful and enjoy coding ;)
+ASP.NET Core has so many built-in libraries and mechanisms to support developers for a better implementation of the functional and non-functional requirements; classes you've seen so far in this article are one of the many, just to support Json Web Tokens. I hope you find this article fruitful, you could also find the source code on [github](https://github.com/shahabisblogging/JwtTokenSample); enjoy coding ;)
