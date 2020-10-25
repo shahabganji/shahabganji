@@ -1,4 +1,4 @@
-title: Configuration settings from Sql Server in ASP.NET Core Applications
+title: Custom Configuration Providers in ASP.NET Core
 date: October 25 2020
 category: aspnetcore
 tags:
@@ -70,6 +70,17 @@ Easy!? you're right; the next step could be to add some extension methods to fac
 ```
 
 With the above-mentioned configuration settings if there is an intersection between keys defined in the `appsettings.json` file and the `SqlServer` those in the SQL Server will override it.
+
+Another thing to mention is that you should create the database and tables manually for this sample.
+
+```sql
+CREATE  TABLE dbo.Configuration(
+
+        [Key]   NVarChar(50)    NOT NULL PRIMARY KEY
+    ,   [Value] NVarCHar(50)    NOT NULL
+)
+GO
+```
 
 That's it. you could take advantage of these two primary classes to bring flexibility to your applications and read the required configuration from any external storage. Find the source code for this article on [this](https://github.com/shahabisblogging/SQLServerConfigurationSample) GitHub repository.
 
