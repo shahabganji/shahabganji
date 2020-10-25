@@ -1,6 +1,6 @@
 title: Generate/Validate JSON Web Tokens(JWT) in ASP.NET Core
 date: August 17 2020
-category: aurelia
+category: aspnetcore
 tags:
     - aspnetcore
     - authorization
