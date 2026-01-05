@@ -2,8 +2,10 @@
 **shahabganji/shahabganji** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 -->
 <br />
+<br />
+<h2 align="center">Hi 👋 I am Shahab Ganji</h2>
 
-<h2 align="center">Hi 👋 I am Shahab Ganji</h1>
+
 <h3 align="center"> The guy who happened to be a software engineer</h3>
 
 <br />
@@ -14,9 +16,9 @@
 - 💬 Ask me about .NET, Azure, C#, DDD, Event Sourcing, and Software Architecture.
 - ⚡ Fun fact: 🥋 ⚽ 📸 
 
-<br />
+<hr />
 
-<h3 align="center">📫 How to reach me </h3>
+<h3 align="center">📫 How to reach out to me </h3>
 <div align="center">
 <br />
 
