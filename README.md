@@ -8,10 +8,10 @@
 
 <br />
 
-- 🔭 I’m currently working on mastering in DDD, ES, Advanced Software Architecture and how to break down a monolith!
+- 🔭 I’m DDD, ES, Software Architecture enthusiast and have worked mostly on how to break down a monolith!
 - :writing_hand: I regularly write articles on [https://shahab-the-guy.dev](https://shahab-the-guy.dev/) and publish videos on [YouTube](https://www.youtube.com/@shahab-the-guy)
-- 💬 Ask me about .NET, Azure, C#, DDD, Event Sourcing, and Software Architecture
-- ⚡ Fun fact: I used to have 🥋 , play lots of ⚽
+- 💬 Ask me about .NET, Azure, C#, DDD, Event Sourcing, and Software Architecture.
+- ⚡ Fun fact: 🥋 ⚽ 📸 
 
 <br />
 
