@@ -8,27 +8,11 @@
 
 <br />
 
-<div style="display: flex; align-items: center; gap: 20px;">
-
-  <div style="flex: 1;">
-
-  - 🔭 I am a DDD, Event Sourcing and Software Architecture enthusiast.
-  - 👨🏻‍💻 I have worked mostly on how to break down a monolith and migrate legacy applications!
-  - :writing_hand: I regularly write articles on [https://shahab-the-guy.dev](https://shahab-the-guy.dev/) and publish videos on [YouTube](https://www.youtube.com/@shahab-the-guy)
-  - 💬 Ask me about .NET, Azure, C#, DDD, Event Sourcing, and Software Architecture.
-  - ⚡ Fun fact: 🥋 ⚽ 📸 
-
-  </div>
-
-  <div style="flex-shrink: 0;">
-
-  <a href="https://mvp.microsoft.com/en-US/mvp/profile/ae3f326d-6a13-42b9-949e-76781f8d3c63">
-    <img src="./assets/MVP_Badge_Secondary_DarkBlue7694_RGB.png" alt="MVP" width="100">
-  </a>
-
-  </div>
-
-</div>
+- 🔭 I am a DDD, Event Sourcing and Software Architecture enthusiast.
+- 👨🏻‍💻 I have worked mostly on how to break down a monolith and migrate legacy applications!
+- :writing_hand: I regularly write articles on [https://shahab-the-guy.dev](https://shahab-the-guy.dev/) and publish videos on [YouTube](https://www.youtube.com/@shahab-the-guy)
+- 💬 Ask me about .NET, Azure, C#, DDD, Event Sourcing, and Software Architecture.
+- ⚡ Fun fact: 🥋 ⚽ 📸 
 
 <br />
 
@@ -36,14 +20,16 @@
 <div align="center">
 <br />
 
-[![Website URL](https://img.shields.io/badge/website-Check_it_out-green?logo=.net&style=for-the-badge)](https://shahab-the-guy.dev/)
+[![Website URL](https://img.shields.io/badge/website-Check_it_out-green?logo=.net&style=for-the-badge)](https://shahab-the-guy.dev/) [![YouTube URL](https://img.shields.io/badge/YouTube-Subscribe-red?logo=youtube&style=for-the-badge)](https://www.youtube.com/@shahab-the-guy)
 
-[![YouTube URL](https://img.shields.io/badge/YouTube-Subscribe-red?logo=youtube&style=for-the-badge)](https://www.youtube.com/@shahab-the-guy)
+[![LinkedIn URL](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=LinkedIn&style=for-the-badge)](https://www.linkedin.com/in/shahab-ganji/) [![Bluesky URL](https://img.shields.io/badge/Bluesky-Follow-blue?logo=bluesky&style=for-the-badge)](https://bsky.app/profile/shahab-the-guy.dev)
 
-[![LinkedIn URL](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=LinkedIn&style=for-the-badge)](https://www.linkedin.com/in/shahab-ganji/)
+</div>
 
+<div align="center">
 
-[![Bluesky URL](https://img.shields.io/badge/Bluesky-Follow-blue?logo=bluesky&style=for-the-badge)](https://bsky.app/profile/shahab-the-guy.dev)
-
+<a href="https://mvp.microsoft.com/en-US/mvp/profile/ae3f326d-6a13-42b9-949e-76781f8d3c63">
+  <img src="./assets/MVP_Badge_Secondary_DarkBlue7694_RGB.png" alt="MVP" width="80">
+</a>
 
 </div>
